@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+   const persona = ["John","James","Smith","01-Jan-2000","M"];
+
+    const nome = persona[0];
+    const middleName = persona[1];
+    const cognome = persona[2];
+    const dataNascita = persona[3];
+    const sesso = persona[4];
+    const anno = dataNascita.slice(0, 4);
+    const mese = dataNascita.slice(5, 7);
+    const giorno = dataNascita.slice(8, 10);
+
+    console.log("Nome:", nome);
+    console.log("Middle name:", middleName);
+    console.log("Cognome:", cognome);
+    console.log("Data di nascita:", dataNascita);
+    console.log("Sesso:", sesso);
+    console.log("Anno:", anno);
+    console.log("Mese:", mese);
+    console.log("Giorno:", giorno);
+        
+
+function codiceCognome(cognome) {
+  let codice = cognome.toUppercase().slice(0, 5);
+  while (codice.length < 5) {
+    codice += '9';
+  }
+  return codice
+
+}
+console.log(cognome);
+
+
+</script>
+</html>
+
