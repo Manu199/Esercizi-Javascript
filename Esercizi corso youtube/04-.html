@@ -28,4 +28,50 @@
       alert('Purchased');
     ">Buy now</button>
   </body>
+
+  <script>
+    const product = {
+      name: 'basketball',
+      cost: 2095,
+    }
+    console.log(product);
+
+    product.cost += 500;
+    console.log(product);  
+
+    product['delivery-time'] = '3 days';
+    console.log(product);
+
+    const product2 = {
+      name: 'tennis ball',
+      cost: 995,
+      'delivery-time': '5 days',
+    }
+
+    function comparePrice(product, product2) {
+      if (product.cost < product2.cost) {
+       return product;
+    } else {
+        return product2;
+        }
+    }
+    console.log(comparePrice(product, product2));
+
+    function isSamePrice(product, product2) {
+      if (product.cost === product2.cost) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    console.log(isSamePrice(product, product2));
+
+    const message = 'HELLO';
+
+    lowercaseMessage = message.toLowerCase();
+    console.log(lowercaseMessage);
+
+    String.prototype.repeat(2); 
+    console.log(message.repeat(2));
+  </script>
 </html>

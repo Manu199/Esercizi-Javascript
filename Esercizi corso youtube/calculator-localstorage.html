@@ -73,6 +73,7 @@
       <button onclick="
         calculation = eval(calculation);
         console.log(calculation);
+        localStorage.setItem('calculation', JSON.stringify(calculation));
       ">=</button>
 
       <button onclick="
@@ -89,11 +90,13 @@
 
 
     <script>
-        let calculation = '';
+
+        let calculation = localStorage.getItem('calculation') || '';
 
         function updateCalculation(value) {
           calculation += value;
           console.log(calculation);
+          localStorage.setItem('calculation', (calculation));
         }
     </script>
 </body>
