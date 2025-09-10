@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exercises</title>
+    </head>
+    <body>
+
+        <button>9a</button>
+
+        <button class="second-btn">9b</button>
+
+        <button onclick="document.querySelector('.js-result').innerHTML = 'You chose heads';
+        " class="heads-btn">heads</button>
+        
+        <button onclick="document.querySelector('.js-result').innerHTML = 'You chose tails';
+        " class="tails-btn">tails</button>
+
+        <p class="js-result"></p>
+
+
+        <input type="text" placeholder="name" class="name-input"
+
+            onkeydown="if(event.key === 'Enter') {
+                const inputElement = document.querySelector('.name-input');
+                document.querySelector('.js-message').innerHTML = `Your name is: ${inputElement.value}`;
+                }
+                ">
+
+        <button onclick="const inputElement = document.querySelector('.name-input');
+        document.querySelector('.js-message')
+        .innerHTML =`Your name is: ${inputElement.value}`;
+        " class="submit-btn">Submit</button>
+
+        <p class="js-message"></p>
+
+        <script>
+
+            console.log(document.querySelector('button'));
+
+            (document.querySelector('.second-btn')).innerHTML = '9b done!';
+
+            
+
+
+        </script>
+    </body>
+</html>
