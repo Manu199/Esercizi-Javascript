@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Projects</title>
+        <style>
+
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .subscribe-btn {
+                border: none;
+                background-color: black;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-radius: 50px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-bottom: 35px;
+
+            }
+
+            .is-subscribed {
+                background-color: rgb(240, 240, 240);
+                color: rgb(0, 0, 0);
+            }
+
+            .cost-input {
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid gray;
+                width: 150px;
+                font-size: 15px;
+            }
+            
+            .calculate-btn {
+                border: none;
+                color: white;
+                background-color: green;
+                padding: 10px 15px;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-left: 10px;
+                margin-top: -2px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <p>YouTube Subscribe Button</p>
+
+        <button onclick="
+        subscribe()
+        " class= 'js-subscribe-button subscribe-btn'>Subscribe</button>
+
+        <p>Amazon Shipping Calculator</p>
+
+        <input onkeydown="
+        handleKeyDown(event)
+        " placeholder="Cost of order"
+        class="js-cost-input cost-input">
+
+        <button onclick="
+        calculateTotal()
+        " class="calculate-btn">Calculate</button>
+
+        <p class="js-total-cost"></p>
+
+        <script>
+
+            window.document
+            window.console.log('window');
+            window.alert
+
+            
+            String(25);
+            console.log(String(25) - 5);
+            console.log(String(25) + 5);
+
+
+            function handleKeyDown(event) {
+                console.log(event.key);
+                if (event.key === 'Enter') {
+                calculateTotal()
+                }
+            }
+
+            function calculateTotal() {
+                const inputElement = document.querySelector('.js-cost-input');
+                let cost = Number(inputElement.value);
+
+                if (cost < 40) {
+                    cost = cost + 10;
+                }
+                
+                document.querySelector('.js-total-cost')
+                    .innerHTML = `Total cost is $${cost}.`;
+            }
+
+            function subscribe() {
+                
+                const buttonElement = document.querySelector('.js-subscribe-button');
+                
+                if(buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerText = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');  
+                } else {
+                buttonElement.innerText = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
