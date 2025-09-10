@@ -21,24 +21,35 @@
         <input type="text" placeholder="name" class="name-input"
 
             onkeydown="if(event.key === 'Enter') {
-                const inputElement = document.querySelector('.name-input');
-                document.querySelector('.js-message').innerHTML = `Your name is: ${inputElement.value}`;
+                namePrinter();
                 }
                 ">
 
-        <button onclick="const inputElement = document.querySelector('.name-input');
-        document.querySelector('.js-message')
-        .innerHTML =`Your name is: ${inputElement.value}`;
+
+        <button onclick="namePrinter();
         " class="submit-btn">Submit</button>
 
         <p class="js-message"></p>
 
+
+        <input type="text" class="input-live" onkeyup="
+        document.querySelector('.live-message').innerHTML = this.value;
+        " placeholder="Type something">
+
+        <p class = "live-message"></p>
+
         <script>
+
+
 
             console.log(document.querySelector('button'));
 
             (document.querySelector('.second-btn')).innerHTML = '9b done!';
 
+            function namePrinter() {
+                const inpputElement = document.querySelector('.name-input');
+                document.querySelector('.js-message').innerHTML = `Your name is: ${inpputElement.value}`;
+            }
             
 
 
