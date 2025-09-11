@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Projects</title>
+        
+    </head>
+    <body>
+        <style>
+
+            .gaming-btn {
+                background-color: rgb(230, 230, 230);
+                border: none;
+                padding: 15px 25px;
+                border-radius: 5px;
+                font-size: 15px;
+                font-weight: bold;
+                cursor: pointer;
+                color: black;
+            }
+            .gaming-btn:hover {
+                background-color: rgb(200, 200, 200);
+            }
+            .is-toggled {
+                background-color: rgb(20, 20, 20);
+                color: white;
+            }
+
+        </style>
+
+        <button class="gaming-btn">Gaming</button>
+
+
+        <script>
+
+            const buttonElement = document.querySelector('.gaming-btn');
+
+            buttonElement.addEventListener('click', function() { 
+                if(buttonElement.classList.contains('is-toggled')) {
+                    buttonElement.classList.remove('is-toggled');
+                } else {
+                    buttonElement.classList.add('is-toggled');
+                }
+               });
+
+               console,log(buttonElement);
+            
+        </script>
+
+    </body>
+</html>

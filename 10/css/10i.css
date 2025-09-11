@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    /* text-align: center;
+    margin-top: 50px; */
+    background-color: black;
+}
+.numbers-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    font-size: 25px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    cursor: pointer;
+}
+
+.functions-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(254, 160, 10);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.clear-btn {
+    font-size: 17px;
+}
+
+.custom-calculation {
+    color: white;
+    font-size: 45px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
