@@ -47,6 +47,8 @@ function renderTodoList() {
         <button onclick="
         todoList.splice(${i}, 1);
         renderTodoList();
+        saveToStorage();
+
         " class="delete-todo-btn">Delete</button>            
         `;
         todoListHTML += html;
