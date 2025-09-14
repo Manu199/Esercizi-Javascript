@@ -5,18 +5,23 @@
     </head>
     <body>
         
-        <button onclick="addToCart()" class="add-to-cart-btn">Add to cart</button>
+        <button onclick="addToCart();" class="add-to-cart-btn">Add to cart</button>
         <p class="js-message"></p>
        <script>
 
+        let timeoutId;
+        
         function addToCart(){
             const message = document.querySelector('.js-message')
             message.innerHTML = 'Added'
-            setTimeout(function(){
-                message.innerHTML = ' ';
-            },1000)
+
+            clearTimeout(timeoutId),2000;
+
+            timeoutId = setTimeout(function(){
+                message.innerHTML = '';
+            },2000)
         }
-        
+
        </script>
 
     </body>
