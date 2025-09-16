@@ -5,17 +5,18 @@
     </head>
     <body>
         
-        <button onclick="changeButton()" class="start-btn">Start</button>
+        <button class="start-btn">Start</button>
         
        <script>
 
-        function changeButton(){
-            const button = document.querySelector('.start-btn')
-            button.innerHTML = 'Loading..'
-            setTimeout(function(){
-                button.innerHTML = 'Finished!';
-            },1000)
-        }
+       
+        document.querySelector('.start-btn')
+            .addEventListener('click', () => {
+                const button = document.querySelector('.start-btn')
+                button.innerHTML = 'Loading..'
+                setTimeout( () => {button.innerHTML = 'Finished!'; },1000)
+        });
+        
         
        </script>
 

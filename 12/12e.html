@@ -5,7 +5,7 @@
     </head>
     <body>
         
-        <button onclick="addToCart();" class="add-to-cart-btn">Add to cart</button>
+        <button  class="add-to-cart-btn">Add to cart</button>
         <p class="js-message"></p>
        <script>
 
@@ -17,11 +17,11 @@
 
             clearTimeout(timeoutId),2000;
 
-            timeoutId = setTimeout(function(){
+            timeoutId = setTimeout(() => {
                 message.innerHTML = '';
             },2000)
         }
-
+        document.querySelector('.add-to-cart-btn').addEventListener('click', addToCart)
        </script>
 
     </body>

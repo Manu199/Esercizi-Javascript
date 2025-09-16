@@ -5,8 +5,7 @@
     </head>
     <body>
         
-        <button onclick="messages++
-        displayNotification()" class="add-btn">Add</button>
+        <button onclick="messages++, addEventListener" class="add-btn">Add</button>
         <button onclick="
         if (messages > 0){
             messages--;
@@ -32,7 +31,7 @@
             }
             isDisplayingNotification = true;
 
-            intervalId = setInterval(function(){
+            intervalId = setInterval(() => {
                 if (document.title === 'App'){
                     document.title = `(${messages}) New messages`;
                 } else {
@@ -48,7 +47,7 @@
             document.title = 'App';
         }
 
-
+        document.querySelector('.add-btn').addEventListener('click', displayNotification)
        </script>
 
     </body>
