@@ -656,5 +656,37 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "9864372",
+    image: "images/products/backpack.jpg",
+    name: "Military Backpack Trip Camping",
+    rating: {
+      stars: 3.5,
+      count: 367
+    },
+    priceCents: 3499,
+    keywords: [
+      "military",
+      "backopack",
+      "bags",
+      "outdoor"
+    ]
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-095849",
+    image: "images/products/umbrella.jpg",
+    name: "Military Umbrella With Cover",
+    rating: {
+      stars: 4,
+      count: 168
+    },
+    priceCents: 1499,
+    keywords: [
+      "rain",
+      "umbrella",
+      "cover",
+      "protection"
+    ]
   }
 ];
