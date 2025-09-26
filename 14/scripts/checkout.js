@@ -1,4 +1,4 @@
-import {cart, removeFromCart, calculateCartQuantity} from '../data/cart.js';
+import {cart, removeFromCart, calculateCartQuantity, updateQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js';
 
@@ -39,8 +39,8 @@ cart.forEach((cartItem) => {
                     <span class="update-quantity-link link-primary js-update-link" data-product-id="${matchingProduct.id}">
                     Update
                     </span>
-                    <input class="quantity-input js-update-number">
-                    <span class="save-quantity-link link-primary js-update-save">Save</span>
+                    <input class="quantity-input js-update-number js-quantity-input-${matchingProduct.id}">
+                    <span class="save-quantity-link link-primary js-update-save" data-product-id="${matchingProduct.id}">Save</span>
                     <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
                     Delete
                     </span>
@@ -124,7 +124,22 @@ document.querySelectorAll('.js-update-link')
             const container = document.querySelector(`.js-cart-item-container-${productId}`);
             container.classList.add('is-editing-quantity');
 
-
         })
     })
+    
+document.querySelectorAll('.js-update-save')
+    .forEach((link) =>  {
+        link.addEventListener('click', () => {
+            const productId = link.dataset.productId;
+            const container = document.querySelector(`.js-cart-item-container-${productId}`);
+            container.classList.remove('is-editing-quantity');
+            const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
+            const newQuantity  = Number(quantityInput.value);
+            console.log(newQuantity)
+            updateQuantity(productId, newQuantity);
+            container.querySelector('.quantity-label').innerHTML = newQuantity;
+            cartQuantityHeader();
+        })
+    })
+
 

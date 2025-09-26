@@ -211,15 +211,22 @@
 }
 
 
-.quantity-input{
-  width: 30px !important;
-}
 
-.js-update-number{
+.quantity-input{
   display: none;
+  width: 30px;
+
 }
 .js-update-save{
   display: none;
+}
+
+.update-quantity-link{
+  display: initial;
+}
+
+.quantity-label{
+  display: initial;
 }
 
 .is-editing-quantity .quantity-input{
@@ -227,4 +234,10 @@
 }
 .is-editing-quantity .save-quantity-link{
   display: initial;
+}
+.is-editing-quantity .update-quantity-link{
+  display: none;
+}
+.is-editing-quantity .quantity-label{
+  display: none;
 }
