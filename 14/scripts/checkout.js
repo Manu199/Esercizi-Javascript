@@ -118,44 +118,36 @@ function cartQuantityHeader(){
 }
 
 document.querySelectorAll('.js-update-link')
-    .forEach((link) => {
-        link.addEventListener('click', () => {
-            const productId = link.dataset.productId;
-            const container = document.querySelector(`.js-cart-item-container-${productId}`);
-            container.classList.add('is-editing-quantity');
+.forEach((link) => {
+    link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
+        const container = document.querySelector(`.js-cart-item-container-${productId}`);
+        container.classList.add('is-editing-quantity');
 
-        })
     })
+})
     
-document.addEventListener('keydown', function (event){
-    if (event.key === 'Enter') {
-        const activeInput = document.activeElement;
-        document.querySelectorAll('.js-update-save')
-        .forEach((link) =>  {
-            link.addEventListener('click', () => {
-                const productId = link.dataset.productId;
-                const container = document.querySelector(`.js-cart-item-container-${productId}`);
-                container.classList.remove('is-editing-quantity');
-                const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
-                const newQuantity  = Number(quantityInput.value);
-                if(newQuantity === 0){
-                    removeFromCart(productId);
-                    container.querySelector('.quantity-label').innerHTML = 0;
-                    cartQuantityHeader();
-                    container.remove();
-                }else if (newQuantity > 0 && newQuantity < 1000){
-                    updateQuantity(productId, newQuantity);
-                    container.querySelector('.quantity-label').innerHTML = newQuantity;
-                    cartQuantityHeader();
-                }else {
-                    alert('Add a valid quantity.');
-                }
-            })
-        })
-        if (link.dataset.active === 'true'){
-            link.click();
+document.querySelectorAll('.js-update-save')
+.forEach((link) =>  {
+    link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
+        const container = document.querySelector(`.js-cart-item-container-${productId}`);
+        container.classList.remove('is-editing-quantity');
+        const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
+        const newQuantity  = Number(quantityInput.value);
+        if(newQuantity === 0){
+            removeFromCart(productId);
+            container.querySelector('.quantity-label').innerHTML = 0;
+            cartQuantityHeader();
+            container.remove();
+        }else if (newQuantity > 0 && newQuantity < 1000){
+            updateQuantity(productId, newQuantity);
+            container.querySelector('.quantity-label').innerHTML = newQuantity;
+            cartQuantityHeader();
+        }else {
+            alert('Add a valid quantity.');
         }
-    }
+    })
 })
 
 
