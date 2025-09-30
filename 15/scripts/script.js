@@ -1,5 +1,5 @@
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-
+import { isWeekend as isSatSun } from './weekend.js';
 
 /* exercise 15a */
 const todaysDate = dayjs();
@@ -23,16 +23,4 @@ const weekDay = todaysDate.format('dddd');
 console.log(weekDay)
 
 
-function isWeekend(date) {
-    const weekdayName = dayjs(date).format('dddd'); // e.g., "Saturday"
-
-    if (weekdayName.toLowerCase() === 'saturday' || weekdayName.toLowerCase() === 'sunday') {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
-
-    console.log(weekdayName);
-}
-
-isWeekend('10-04-2025');
+isSatSun('10-04-2025');
