@@ -5,4 +5,4 @@ import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 const monthDay = dayjs();
 const futureDate = monthDay.add(7, 'day');
 
-console.log(futureDate.format('DD-MM-YYYY'));
+console.log(futureDate.format('MM-DD'));
